@@ -2,7 +2,7 @@ package com.company.codewars;
 
 public class Factorial {
     public static void main(String[] args) {
-        System.out.println(factorial(6));
+        System.out.println(factorialR(6));
 
     }
     public static int factorial(int number){
@@ -11,5 +11,11 @@ public class Factorial {
             result = result * i;
         }
         return result;
+    }
+    public static int factorialR (int number) {
+        if(number <= 1){
+            return 1;
+        }
+        return number * factorialR(number -1);
     }
 }
