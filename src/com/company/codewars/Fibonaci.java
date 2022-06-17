@@ -5,7 +5,7 @@ public class Fibonaci {
 
         //System.out.println(fibonacci(6));
         //System.out.println(fibonacciLoop(5));
-        fibonacciLoop(16);
+        fibonacciLoop(12);
     }
 
     public static int fibonacci(int n) {
