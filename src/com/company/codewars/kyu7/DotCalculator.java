@@ -18,21 +18,23 @@ public class DotCalculator {
 
     public static String calc(String txt) {
         String dotAnswer = ".";
+        int dotLen = 0;
         String[] dotArr = txt.split(" ");
         if (dotArr[1].equals("+")) {
-          int dotLen = dotArr[0].length() + dotArr[2].length();
-            dotAnswer = dotAnswer.repeat(dotLen);
-        } else if (dotArr[1].equals("*")){
-            int dotLen = dotArr[0].length() * dotArr[2].length();
-            dotAnswer = dotAnswer.repeat(dotLen);
-        } else if (dotArr[1].equals("-")){
-            int dotLen = dotArr[0].length() - dotArr[2].length();
-            if(dotLen < 0){
-                dotAnswer = "";
-            } else
-            dotAnswer = dotAnswer.repeat(dotLen);
+            dotLen = dotArr[0].length() + dotArr[2].length();
+        } else if (dotArr[1].equals("*")) {
+            dotLen = dotArr[0].length() * dotArr[2].length();
+        } else if (dotArr[1].equals("-")) {
+            dotLen = dotArr[0].length() - dotArr[2].length();
+            if (dotLen < 0) {
+                return dotAnswer = "";
+            }
+        } else if (dotArr[1].equals("//")) {
+            if(dotArr[0].length() <= 0 || dotArr[0].length() < dotArr[2].length()){
+                return dotAnswer = "";
+            }
+            dotLen = dotArr[0].length() / dotArr[2].length();
         }
-        //Code here
-        return dotAnswer;
+        return dotAnswer.repeat(dotLen);
     }
 }
