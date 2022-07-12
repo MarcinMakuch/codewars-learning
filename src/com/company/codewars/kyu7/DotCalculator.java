@@ -27,11 +27,11 @@ public class DotCalculator {
         } else if (dotArr[1].equals("-")) {
             dotLen = dotArr[0].length() - dotArr[2].length();
             if (dotLen < 0) {
-                return dotAnswer = "";
+                return "";
             }
         } else if (dotArr[1].equals("//")) {
             if(dotArr[0].length() <= 0 || dotArr[0].length() < dotArr[2].length()){
-                return dotAnswer = "";
+                return "";
             }
             dotLen = dotArr[0].length() / dotArr[2].length();
         }
